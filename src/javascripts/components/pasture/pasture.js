@@ -2,6 +2,7 @@ import cowData from '../../helpers/data/cowData';
 import utils from '../../helpers/utils';
 import cowComponent from '../cow/cow';
 
+
 const buildCows = () => {
   cowData.getCows()
     .then((cows) => {
