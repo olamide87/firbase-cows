@@ -1,20 +1,22 @@
-import farmerData from '../../helpers/data/farmerData';
-import farmerComponent from '../farmer/farmer';
-import utils from '../../helpers/utils';
+import axios from 'axios';
+import apiKeys from '../apikeys.json';
 
-const buildFarmers = () => {
-  farmerData.getFarmers()
-    .then((farmers) => {
-      let domString = '';
-      domString += '<h2 class="text-center">Farmhouse</h2>';
-      domString += '<div class="d-flex flex-wrap">';
-      farmers.forEach((farmer) => {
-        domString += farmerComponent.farmMaker(farmer);
+const baseUrl = apiKeys.firebaseKeys.databaseURL;
+
+const getFarmers = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/farmers.json`)
+    .then((response) => {
+      const demFarmers = response.data;
+      const farmers = [];
+      Object.keys(demFarmers).forEach((farmerId) => {
+        demFarmers[farmerId].id = farmerId;
+        farmers.push(demFarmers[farmerId]);
       });
-      domString += '</div>';
-      utils.printToDom('farmhouse', domString);
+      resolve(farmers);
     })
-    .catch((err) => console.error('problem with getFarmers', err));
-};
+    .catch((err) => reject(err));
+});
 
-export default { buildFarmers };
+const getFarmerById = (farmerId) => axios.get(`${baseUrl}/farmers/${farmerId}.json`);
+
+export default { getFarmers, getFarmerById };
