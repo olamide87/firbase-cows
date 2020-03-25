@@ -1,5 +1,5 @@
 import firebase from 'firebase/app';
-import apiKeys from './helpers/apiKeys.json';
+import apiKeys from './helpers/apikeys.json';
 
 import authData from './helpers/data/authData';
 import auth from './components/auth/auth';
@@ -12,6 +12,8 @@ const init = () => {
   authData.checkLoginStatus();
   auth.loginButton();
   myNavbar.logoutEvent();
+  $('body').on('mouseenter', '.farmer-card', (e) => e.target.closest('.card').classList.add('bg-danger'));
+  $('body').on('mouseleave', '.farmer-card', (e) => e.target.closest('.card').classList.remove('bg-danger'));
 };
 
 init();
