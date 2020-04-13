@@ -1,11 +1,11 @@
 {
   "firebaseKeys" : {
-    "apiKey": "AIzaSyDhobtjVAh_0vxovkm4Q2ck4tElC6ozw9k",
-    "authDomain": "fir-cows-65572.firebaseapp.com",
-    "databaseURL": "https://fir-cows-65572.firebaseio.com",
-    "projectId": "fir-cows-65572",
-    "storageBucket": "fir-cows-65572.appspot.com",
-    "messagingSenderId": "739884362700",
-    "appId": "1:739884362700:web:aaf526df2ccfa41c79cb69"
+    "apiKey": "AIzaSyCq1Zdp6kRkomj_GYJSZes3MDXTp8g1DrQ",
+    "authDomain": "fir-cows-cfa84.firebaseapp.com",
+    "databaseURL": "https://fir-cows-cfa84.firebaseio.com",
+    "projectId": "fir-cows-cfa84",
+    "storageBucket": "fir-cows-cfa84.appspot.com",
+    "messagingSenderId": "656776288913",
+    "appId": "1:656776288913:web:76cdbdbc7d8d4ce898fd30"
   }
 }
